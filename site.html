@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo, jogador!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .login-container {
+            background-color: rgb(30, 30, 30);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0px 0px 10px rgba(124, 206, 69, 0.5);
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(124, 206, 69);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: black;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: rgb(100, 180, 60);
+        }
+    </style>
+    <script>
+        // Lista de usuários e senhas
+        const users = {
+            "admin": "1234",
+        };
+
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (users[username] && users[username] === password) {
+                alert("Login bem-sucedido!");
+                window.location.href = "páginas/intro.html"; // Redireciona para a página do primeiro enigma
+            } else {
+                alert("Usuário ou senha incorretos!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Faça login para continuar</h1>
+
+    <div class="login-container">
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+    </div>
+</body>
+</html>
